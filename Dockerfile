@@ -26,7 +26,7 @@ RUN apt-get install -y \
     libncursesw5-dev \
     libdaemon-dev \
     libjansson-dev \
-    libsoup2.4-dev \
+    libsoup2.4-dev
     
 
 RUN ./autogen.sh && ./configure && make && make install
