@@ -13,6 +13,7 @@ RUN apt-get ${APT_ARGS} update  &&\
     apt-get clean
 
 RUN apt-get install -y \ 
+    apt-utils \
     automake \
     libtool \
     pkg-config \
@@ -25,9 +26,10 @@ RUN apt-get install -y \
     libncursesw5-dev \
     libdaemon-dev \
     libjansson-dev \
-    libsoup2.4-dev
+    libsoup2.4-dev \
+    
 
-RUN ./autogen.sh &&./configure && make && make install
+RUN ./autogen.sh && ./configure && make && make install
 
 EXPOSE 5000 8080 22
 CMD ['/bin/bash', 'gstd']
